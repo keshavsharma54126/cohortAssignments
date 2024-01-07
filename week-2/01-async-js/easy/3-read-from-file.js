@@ -26,7 +26,7 @@ const fsi =()=>{
         i++;
         
     }
-    console.log('hi tere')
+    console.log('hi there')
     
 
 }

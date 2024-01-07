@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="title" id="title">
+    </input></br>
+    <input type="text" placeholder="descriptions" id="description"></br>
+    <button onclick="addTodo()" id="button">Add Todo</button></br>
+    <div id="container"></div>
+    <script type="text/javascript">
+        let uniqueid=0;
+
+        function markAsDone(id){
+            const div = document.getElementById(id);
+            div.children[2].innerHTML="Done";
+            div.children[2].style.backgroundColor="green";
+        }
+
+        function createChild(title,description,id){
+            const child = document.createElement("div");
+            const titleDiv = document.createElement("div");
+            titleDiv.innerHTML=title;
+            const descriptionDiv = document.createElement("div");
+            descriptionDiv.innerHTML=description;
+            const button = document.createElement("button");
+            button.innerHTML="Mark as done";
+            button.setAttribute('onclick',`markAsDone(${id})`);
+            button.style.backgroundColor="red";
+            child.appendChild(titleDiv);
+            child.appendChild(descriptionDiv);
+            child.appendChild(button);
+            child.setAttribute('id',id);
+            return child;
+        }
+
+
+         function addTodo() {
+            const parent = document.querySelector("#container");
+            const title = document.querySelector("#title").value;
+            const description = document.querySelector("#description").value;
+            const button = document.querySelector("#button");
+            const chlidele = createChild(title,description,uniqueid++);
+            parent.appendChild(chlidele);
+         }
+    </script>
+</body>
+</html>
