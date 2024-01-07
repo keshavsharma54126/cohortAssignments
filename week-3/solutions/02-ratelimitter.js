@@ -1,5 +1,4 @@
-const request = require('supertest');
-const assert = require('assert');
+
 const express = require('express');
 const app = express();
 // You have been given an express server which has a few endpoints.
@@ -11,42 +10,28 @@ const app = express();
 // You have been given a numberOfRequestsForUser object to start off with which
 // clears every one second
 
-<<<<<<< HEAD
-
-app.use(express.json())
-
-let numberOfRequestsForUser = {
- 
- };
- setInterval(() => {
-  numberOfRequestsForUser = {};
-}, 1000)
-
-
-app.use(function rateLimiter(req,res,next){
-  let user = req.headers["user-id"];
-  if(numberOfRequestsForUser[user]){
-    numberOfRequestsForUser[user]=numberOfRequestsForUser[user]+1;
-    if(numberOfRequestsForUser[user]>5){
-      res.status(404).send('no of requests reached its limit')
-    }
-    else{
-      next();
-    }
-  }
-  else{
-    numberOfRequestsForUser[user]=1;
-    next();
-  }
-})
-
-=======
 let numberOfRequestsForUser = {};
 setInterval(() => {
     numberOfRequestsForUser = {};
 }, 1000)
+// 
+app.use(function(req, res, next) {
+  const userId = req.headers["user-id"];
 
->>>>>>> upstream/master
+  if (numberOfRequestsForUser[userId]) {
+    numberOfRequestsForUser[userId] = numberOfRequestsForUser[userId] + 1;
+    if (numberOfRequestsForUser[userId] > 5) {
+      res.status(404).send("no entry");
+    } else {
+      next();
+    }
+  } else {
+    numberOfRequestsForUser[userId] = 1;
+    next();
+  }
+})
+
+
 app.get('/user', function(req, res) {
   res.status(200).json({ name: 'john' });
 });

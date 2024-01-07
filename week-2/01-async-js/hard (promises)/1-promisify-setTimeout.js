@@ -3,6 +3,7 @@
 */
 
 function wait(n) {
+<<<<<<< HEAD
     const promise1 = new Promise((resolve, reject) =>{
         setTimeout(()=>{
             console.log('promise resolved');
@@ -10,6 +11,8 @@ function wait(n) {
         },n*1000)
     })
     return promise1;
+=======
+>>>>>>> upstream/master
 }
 
 module.exports = wait;

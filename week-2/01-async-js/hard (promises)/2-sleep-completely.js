@@ -4,6 +4,7 @@
  * the function should return a promise just like before
  */
 
+<<<<<<< HEAD
 async function sleep(milliseconds) {
     
     const promise1 = new Promise((resolve, reject) =>{
@@ -16,6 +17,9 @@ async function sleep(milliseconds) {
     return promise1;
     
     
+=======
+function sleep(milliseconds) {
+>>>>>>> upstream/master
 }
 
 module.exports = sleep;

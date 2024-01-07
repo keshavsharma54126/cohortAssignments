@@ -17,6 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
+<<<<<<< HEAD
 app.get('/files/',(req,res)=>{
    fs.readdir(path.join(__dirname,'./files/'),(err,files)=>{
       if(err){
@@ -44,5 +45,7 @@ app.all('*',(req,res)=>{
 })
 
 
+=======
+>>>>>>> upstream/master
 
 module.exports = app;

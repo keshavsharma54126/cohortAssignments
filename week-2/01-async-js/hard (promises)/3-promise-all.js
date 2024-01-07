@@ -5,6 +5,7 @@
  */
 
 function wait1(t) {
+<<<<<<< HEAD
     return new Promise((resolve, reject) =>{
         setTimeout(()=>{
             resolve();
@@ -37,6 +38,21 @@ function calculateTime(t1, t2, t3) {
     .catch((err)=>{
         console.error(err)
     })
+=======
+
+}
+
+function wait2(t) {
+
+}
+
+function wait3(t) {
+
+}
+
+function calculateTime(t1, t2, t3) {
+
+>>>>>>> upstream/master
 }
 
 module.exports = calculateTime;

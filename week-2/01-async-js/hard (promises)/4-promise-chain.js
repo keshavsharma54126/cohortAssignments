@@ -5,6 +5,7 @@
  * Compare it with the results from 3-promise-all.js
  */
 
+<<<<<<< HEAD
 const wait = require("./1-promisify-setTimeout");
 
 function wait1(t) {
@@ -46,6 +47,22 @@ function calculateTime(t1, t2, t3) {
         return endtime-startTime;
     })
     
+=======
+function wait1(t) {
+
+}
+
+function wait2(t) {
+
+}
+
+function wait3(t) {
+
+}
+
+function calculateTime(t1, t2, t3) {
+
+>>>>>>> upstream/master
 }
 
 module.exports = calculateTime;
